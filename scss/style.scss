@@ -639,6 +639,16 @@ section {
   padding: 150px 0 160px;
   color: var(--c-white);
 
+  @media screen and (max-width: 1024px) {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+    clip-path: polygon(0 1.5%, 100% 0, 100% 98.5%, 0 100%);
+  }
+
+
   img {
     max-width: 100%;
   }
@@ -1035,6 +1045,16 @@ section {
   clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 220px 0;
 
+  @media screen and (max-width: 1024px) {
+    padding: 160px 0;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+    clip-path: polygon(0 1.5%, 100% 0, 100% 98.5%, 0 100%);
+  }
+
   .title {
     &--h2-zoot {
       color: var(--c-white);
@@ -1049,10 +1069,17 @@ section {
 
 .supporting--zoot {
   background: var(--c-white);
-  padding: 15px 100px 20px;
+  padding: 25px 100px 30px;
   border-radius: 8px;
   min-height: 400px;
   position: relative;
+
+  @media screen and (max-width: 1280px) {
+    padding-right: 50px;
+  }
+  @media screen and (max-width: 576px) {
+    padding: 25px 40px;
+  }
 
   .row {
     position: relative;
@@ -1065,11 +1092,28 @@ section {
     left: 0;
     text-transform: uppercase;
     transform: rotate(-90deg) translate(-200px, -105px);
+    @media screen and (max-width: 576px) {
+      position: relative;
+      transform: none;
+      text-align: center;
+      padding-bottom: 20px;
+      width: 100%;
+    }
   }
 
 
 
   &-item {
+    @media screen and (max-width: 768px) {
+      max-width: 350px;
+      margin: 0 auto;
+
+      &:nth-last-of-type(-n+2) {
+        margin-top: -17px;
+      }
+
+    }
+
     &:last-child {
       border: none;
     }
@@ -1099,15 +1143,31 @@ section {
   }
 
   .circle--zoot {
+    --pad-circle: 61px;
+
+    @media screen and (max-width: 1280px) {
+      --pad-circle: 59px;
+    }
+
+    @media screen and (max-width: 768px) {
+      --pad-circle: 34px;
+    }
+
     width: 100%;
-    padding-bottom: calc(100% + 61px);
+    padding-bottom: calc(100% + var(--pad-circle));
     position: relative;
     border-radius: 50%;
+
+    .desc--small-zoot {
+      @media screen and (max-width: 1280px) {
+        line-height: 17px;
+      }
+    }
 
     &::before,
     &::after {
       content: "";
-      width: calc(100% + 61px);
+      width: calc(100% + var(--pad-circle));
       transform: translate(-50%, -50%);
       position: absolute;
       height: 100%;
@@ -1129,11 +1189,20 @@ section {
       &::before {
         background: conic-gradient(transparent 0deg 180deg, #5392a8 180deg, #4c81a8 360deg);
         transform: rotate(-90deg) translate(50%, -50%);
+
+        @media screen and (max-width: 768px) {
+          background: conic-gradient(transparent 0deg 90deg, #4670a8 90deg, #5392a8 180deg 270deg, transparent 270deg 360deg);
+          transform: rotate(-90deg) translate(50%, -50%);
+        }
       }
 
       &::after {
         background: conic-gradient(#f3f3f3 0deg 180deg, transparent 180deg 360deg);
         transform: rotate(-90deg) translate(50%, -50%);
+
+        @media screen and (max-width: 768px) {
+          background: conic-gradient(#f3f3f3 0deg 90deg, transparent 0deg 280deg, #f3f3f3 180deg 360deg);
+        }
       }
     }
 
@@ -1141,11 +1210,19 @@ section {
       &::before {
         background: conic-gradient(transparent 0deg 90deg, #5392a8 90deg, #60b3a8 360deg);
         transform: rotate(180deg) translate(50%, 50%);
+
+        @media screen and (max-width: 768px) {
+          background: conic-gradient(#60b3a8 0deg, #5392a8 180deg, transparent 180deg 260deg, #60b3a8 260deg);
+        }
       }
 
       &::after {
         background: conic-gradient(#f3f3f3 0deg 90deg, transparent 90deg 360deg);
         transform: rotate(180deg) translate(50%, 50%);
+
+        @media screen and (max-width: 768px) {
+          background: conic-gradient(transparent 0deg 180deg, #f3f3f3 180deg 260deg, transparent 260deg 360deg);
+        }
       }
     }
 
@@ -1155,11 +1232,21 @@ section {
       right: calc(100% + 14px);
       top: 16px;
       padding-bottom: 100%;
-      width: calc(100% - 62px);
+      width: calc(100% - var(--pad-circle));
+
+      @media screen and (max-width: 768px) {
+        right: 19px;
+        top: auto;
+        bottom: calc(100% - 17px);
+      }
 
       &::before {
         background: conic-gradient(#f3f3f3 0deg 180deg, transparent 180deg 360deg);
         transform: rotate(-90deg) translate(50%, -50%);
+
+        @media screen and (max-width: 768px) {
+          background: conic-gradient(transparent 0deg 265deg, #f3f3f3 265deg 360deg);
+        }
       }
     }
 
@@ -1169,15 +1256,20 @@ section {
       width: 100%;
       transform: translate(-50%, -50%);
       position: absolute;
-      height: calc(100% - 61px);
+      height: calc(100% - var(--pad-circle));
       left: 50%;
       display: block;
       top: 50%;
       background: var(--c-white);
       border-radius: 50%;
       z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
-      padding-top: 50px;
+      overflow: hidden;
+
+
 
       h5 {
         text-transform: uppercase;
@@ -1190,13 +1282,21 @@ section {
           text-align: center;
           background: #000;
           margin: 20px auto;
+
+          @media screen and (max-width: 1280px) {
+            margin: 5px auto;
+          }
         }
       }
 
       .desc--small-zoot {
-        max-width: 90%;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0 20px;
         padding-bottom: 15px;
+
+        @media screen and (max-width: 1280px) {
+          padding-bottom: 5px;
+        }
       }
     }
 
@@ -1207,6 +1307,9 @@ section {
 
     .supporting-title {
       transform: rotate(-90deg) translate(-178px, -155px);
+      @media screen and (max-width: 576px) {
+        transform: none;
+      }
     }
 
     &-item {
@@ -1218,6 +1321,10 @@ section {
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 10px;
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
     }
   }
 }
@@ -1243,11 +1350,24 @@ section {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
+    @media screen and (max-width: 768px) {
+      padding-bottom: 40px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
     h4 {
       border-bottom: 1px solid #ebfcff2b;
       padding-bottom: 20px;
       margin-bottom: 20px;
       position: relative;
+
+      @media screen and (max-width: 768px) {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
 
       &::after {
         content: '';
@@ -1319,7 +1439,7 @@ section {
       width: calc(50% - 20px);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 576px) {
       width: 100%;
       margin: 0 0 10px;
     }
@@ -1479,6 +1599,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     height: 100%;
+
     @media screen and (max-width: 1024px) {
       display: none;
     }
@@ -1500,17 +1621,39 @@ section {
 .services--zoot {
   padding: 70px 0;
 
+  @media screen and (max-width: 991px) {
+    padding: 50px 0;
+  }
+
   &-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    align-items: flex-end;
+
+    &:nth-last-of-type(-n+2) {
+      @media screen and (max-width: 991px) {
+        padding-top: 40px;
+      }
+    }
+
+    &:nth-last-of-type(-n+3) {
+      @media screen and (max-width: 768px) {
+        padding-top: 30px;
+      }
+    }
+
 
     .title--h5-zoot {
       text-transform: uppercase;
       padding-bottom: 10px;
       margin-top: 30px;
+
+      @media screen and (max-width: 991px) {
+        margin-top: 0;
+      }
     }
 
     .btn-zoot {
@@ -1526,6 +1669,8 @@ section {
     align-items: center;
     position: relative;
 
+
+
     &::before {
       content: "";
       width: calc(100% + 50px);
@@ -1533,9 +1678,11 @@ section {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(calc(-50% - 19px), calc(-50% + 41px));
+      transform: translate(-50%, -35%);
       background: url(../img/service-bg.png);
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       z-index: -1;
     }
   }
@@ -1553,7 +1700,8 @@ section {
 
 
   img {
-    max-width: 100%;
+    max-width: 50%;
+    object-fit: cover;
   }
 }
 
@@ -1572,9 +1720,11 @@ section {
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0em;
+
     @media screen and (max-width: 1024px) {
       font-size: 20px;
     }
+
     @media screen and (max-width: 768px) {
       font-size: 18px;
       line-height: 20px;
@@ -1589,10 +1739,12 @@ section {
     text-align: left;
     width: 100%;
     display: block;
+
     @media screen and (max-width: 1024px) {
       font-size: 15px;
       line-height: 22px;
     }
+
     @media screen and (max-width: 768px) {
       font-size: 14px;
     }
@@ -1690,6 +1842,7 @@ section {
 
     .btn-zoot {
       margin-top: 40px;
+
       @media screen and (max-width: 768px) {
         margin-top: 20px;
       }
@@ -1725,6 +1878,7 @@ section {
       border: 4px solid #EBFCFF;
       padding: 40px;
     }
+
     @media screen and (max-width: 768px) {
       padding: 20px;
     }
@@ -1753,6 +1907,7 @@ section {
           min-height: 45px;
           margin-bottom: 20px;
         }
+
         @media screen and (max-width: 768px) {
           padding-left: 35px;
           min-height: auto;
@@ -1784,6 +1939,7 @@ section {
           font-size: 18px;
           line-height: 22px;
         }
+
         @media screen and (max-width: 768px) {
           width: 25px;
           height: 25px;
@@ -1882,12 +2038,19 @@ section {
 //quote 
 .quote-zoot {
   background: linear-gradient(7deg, rgba(75, 113, 169, 1) 0%, rgba(102, 191, 171, 1) 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 200px 0 150px;
 
   @media screen and (max-width: 1024px) {
     padding: 150px 0 120px;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+    clip-path: polygon(0 1.5%, 100% 0, 100% 98.5%, 0 100%);
+  }
+
 
   .quote-inner {
     max-width: 965px;
