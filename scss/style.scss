@@ -50,6 +50,12 @@ body {
   align-items: center;
 }
 
+.reverse-col-m {
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+}
+
 section {
   padding: var(--padd-sec);
 
@@ -95,7 +101,7 @@ section {
 
   &--h5-zoot {
     font-size: 18px;
-    line-height: 16px;
+    line-height: 25px;
     font-weight: 600;
   }
 
@@ -130,6 +136,11 @@ section {
       font-size: 19px;
       line-height: 20px;
     }
+
+    &--h5-zoot {
+      font-size: 17px;
+      line-height: 23px;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -151,6 +162,11 @@ section {
 
     &--h4-zoot {
       font-size: 18px;
+    }
+
+    &--h5-zoot {
+      font-size: 16px;
+      line-height: 23px;
     }
   }
 
@@ -193,6 +209,16 @@ section {
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
 }
 
@@ -225,6 +251,10 @@ section {
     line-height: 16px;
     display: inline-block;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      padding: 12px 25px;
+    }
   }
 
   &--transparent {
@@ -1294,9 +1324,7 @@ section {
       margin: 0 0 10px;
     }
 
-    // @media screen and (max-width: 991px) {
-    //   padding: 20px 20px 20px;
-    // }
+
 
     .desc--small-zoot {
       padding-top: 10px;
@@ -1328,6 +1356,10 @@ section {
 
     p {
       padding: 15px 0 0;
+
+      @media screen and (max-width: 768px) {
+        padding-top: 10px;
+      }
     }
   }
 
@@ -1339,6 +1371,10 @@ section {
 
   .banner--img-zoot {
     max-width: 100%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
@@ -1392,7 +1428,7 @@ section {
 
 @media screen and (max-width: 1024px) {
   .main--banner-zoot {
-    min-height: 340px;
+    min-height: 380px;
   }
 }
 
@@ -1410,7 +1446,7 @@ section {
 .header-zoot {
   position: absolute;
   z-index: 1;
-  padding: 15px 30px;
+  padding: 15px 0;
   margin: 0 auto;
   transform: translateX(-50%);
   left: 50%;
@@ -1443,6 +1479,9 @@ section {
     flex-wrap: wrap;
     align-items: center;
     height: 100%;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
 
 
     a {
@@ -1533,7 +1572,13 @@ section {
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0em;
-
+    @media screen and (max-width: 1024px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
 
   label {
@@ -1544,16 +1589,34 @@ section {
     text-align: left;
     width: 100%;
     display: block;
+    @media screen and (max-width: 1024px) {
+      font-size: 15px;
+      line-height: 22px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   .about-us {
     &-text {
       max-width: 477px;
 
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+      }
+
       .btn-zoot {
         margin-top: 50px;
+
+        @media screen and (max-width: 768px) {
+          margin-top: 30px;
+        }
+
       }
     }
+
+
     &-form {
       padding-right: 30px;
     }
@@ -1562,6 +1625,31 @@ section {
       display: flex;
       justify-content: flex-end;
       position: relative;
+
+      &.img-from {
+        @media screen and (max-width: 768px) {
+          max-width: 80%;
+          margin: 0 auto;
+
+          &::before {
+            width: 70%;
+            height: 80%;
+            top: -33px;
+          }
+
+          img {
+            max-height: 400px;
+            margin-bottom: 50px;
+          }
+        }
+      }
+
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 50px;
+        justify-content: center;
+      }
+
 
       &::before {
         content: "";
@@ -1575,6 +1663,14 @@ section {
         background-size: contain;
         background-repeat: no-repeat;
         z-index: -1;
+
+        @media screen and (max-width: 768px) {
+          width: 90%;
+          height: 100%;
+          top: -50px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       img {
@@ -1594,6 +1690,9 @@ section {
 
     .btn-zoot {
       margin-top: 40px;
+      @media screen and (max-width: 768px) {
+        margin-top: 20px;
+      }
     }
 
     .email {
@@ -1612,6 +1711,8 @@ section {
 
 //support 
 .support--zoot {
+  padding-top: 0;
+
   .support--inner {
     border: 5px solid #EBFCFF;
     box-shadow: -3px 7px 16px 0px #3B86C012;
@@ -1619,6 +1720,14 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media screen and (max-width: 1024px) {
+      border: 4px solid #EBFCFF;
+      padding: 40px;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 20px;
+    }
 
     .title--h2-zoot {
       max-width: 600px;
@@ -1634,9 +1743,21 @@ section {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        padding-bottom: 20px;
+        position: relative;
+        padding-left: 80px;
+        min-height: 54px;
+        margin-bottom: 20px;
 
-
+        @media screen and (max-width: 1024px) {
+          padding-left: 65px;
+          min-height: 45px;
+          margin-bottom: 20px;
+        }
+        @media screen and (max-width: 768px) {
+          padding-left: 35px;
+          min-height: auto;
+          margin-bottom: 20px;
+        }
       }
 
       span {
@@ -1653,7 +1774,22 @@ section {
         letter-spacing: -0.015em;
         text-align: left;
         position: relative;
-        margin-right: 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        @media screen and (max-width: 1024px) {
+          width: 45px;
+          height: 45px;
+          font-size: 18px;
+          line-height: 22px;
+        }
+        @media screen and (max-width: 768px) {
+          width: 25px;
+          height: 25px;
+          font-size: 14px;
+          line-height: 20px;
+        }
 
         &::after {
           content: '';
@@ -1749,9 +1885,14 @@ section {
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   padding: 200px 0 150px;
 
+  @media screen and (max-width: 1024px) {
+    padding: 150px 0 120px;
+  }
+
   .quote-inner {
     max-width: 965px;
     margin: 0 auto;
+    width: 90%;
 
   }
 
@@ -1781,6 +1922,11 @@ section {
     position: relative;
     padding-bottom: 15px;
 
+    @media screen and (max-width: 1024px) {
+      font-size: 28px;
+      line-height: 35px;
+    }
+
     &::before {
       content: "";
       height: 77px;
@@ -1793,6 +1939,14 @@ section {
       background-size: contain;
       background-repeat: no-repeat;
       z-index: -1;
+
+      @media screen and (max-width: 1024px) {
+        height: 50px;
+        left: -30px;
+        top: -20px;
+      }
+
+
     }
   }
 }
