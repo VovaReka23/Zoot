@@ -20,7 +20,7 @@ body {
   --c-white: #fff;
   --c-dark: #000;
   --bg-light: #EBFCFF;
-  --c-gradient: linear-gradient(115deg, rgb(71, 103, 169) 68%, rgb(103, 195, 171) 100%);
+  --c-gradient: linear-gradient(79.59deg, #4767A9 28.86%, #67C3AB 132.65%);
   --padd-sec: 100px 0;
   --padd-sec-m: 80px 0;
   --padd-sec-s: 50px 0;
@@ -634,7 +634,7 @@ section {
 
 // advantages
 .our-advantages-zoot {
-  background: linear-gradient(7deg, rgba(75, 113, 169, 1) 0%, rgba(102, 191, 171, 1) 100%);
+  background: var(--c-gradient);
   clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 150px 0 160px;
   color: var(--c-white);
@@ -1041,7 +1041,7 @@ section {
 
 // info
 .info--zoot {
-  background: linear-gradient(7deg, rgba(75, 113, 169, 1) 0%, rgba(102, 191, 171, 1) 100%);
+  background: var(--c-gradient);
   clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 220px 0;
 
@@ -1314,7 +1314,7 @@ section {
 
     &-item {
       padding: 5px 10px;
-      background: linear-gradient(90deg, rgba(70, 112, 168, 1) 0%, rgba(96, 179, 168, 1) 100%);
+      background: var(--c-gradient);
       color: var(--c-white);
       font-size: 16px;
       font-weight: 600;
@@ -2037,7 +2037,7 @@ section {
 
 //quote 
 .quote-zoot {
-  background: linear-gradient(7deg, rgba(75, 113, 169, 1) 0%, rgba(102, 191, 171, 1) 100%);
+  background: var(--c-gradient);
   clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 200px 0 150px;
 

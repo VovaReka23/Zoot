@@ -20,7 +20,7 @@ body {
   --c-white: #fff;
   --c-dark: #000;
   --bg-light: #EBFCFF;
-  --c-gradient: linear-gradient(115deg, rgb(71, 103, 169) 68%, rgb(103, 195, 171) 100%);
+  --c-gradient: linear-gradient(79.59deg, #4767A9 28.86%, #67C3AB 132.65%);
   --padd-sec: 100px 0;
   --padd-sec-m: 80px 0;
   --padd-sec-s: 50px 0;
@@ -547,7 +547,7 @@ section {
   }
 }
 .our-advantages-zoot {
-  background: linear-gradient(7deg, rgb(75, 113, 169) 0%, rgb(102, 191, 171) 100%);
+  background: var(--c-gradient);
   -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
           clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 150px 0 160px;
@@ -865,7 +865,7 @@ section {
   }
 }
 .info--zoot {
-  background: linear-gradient(7deg, rgb(75, 113, 169) 0%, rgb(102, 191, 171) 100%);
+  background: var(--c-gradient);
   -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
           clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 220px 0;
@@ -1115,7 +1115,7 @@ section {
 }
 .supporting--zoot .zoot--data-item {
   padding: 5px 10px;
-  background: linear-gradient(90deg, rgb(70, 112, 168) 0%, rgb(96, 179, 168) 100%);
+  background: var(--c-gradient);
   color: var(--c-white);
   font-size: 16px;
   font-weight: 600;
@@ -1762,7 +1762,7 @@ section {
 }
 
 .quote-zoot {
-  background: linear-gradient(7deg, rgb(75, 113, 169) 0%, rgb(102, 191, 171) 100%);
+  background: var(--c-gradient);
   -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
           clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
   padding: 200px 0 150px;
