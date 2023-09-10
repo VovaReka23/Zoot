@@ -251,6 +251,26 @@ section {
     line-height: 16px;
     display: inline-block;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--c-alter);
+      transition: all 0.3s ease-in-out;
+
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
 
     @media screen and (max-width: 768px) {
       padding: 12px 25px;
@@ -284,7 +304,7 @@ section {
 
   .more-zoot {
     transition: all 0.3s ease-in-out;
-    max-height: max-content;
+    max-height: 1000px;
     overflow: hidden;
 
     &.hidden-zoot {
@@ -302,7 +322,7 @@ section {
   }
 
   .blog-details-inner {
-    max-width: 920px;
+    max-width: 960px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -310,7 +330,11 @@ section {
 
     p {
       padding-bottom: 0;
+    }
 
+    h2 {
+      text-align: center;
+      max-width: 80%;
     }
 
     .btn-zoot {
@@ -1395,7 +1419,7 @@ section {
 
       &::before {
         content: "";
-        width: 75%;
+        width: 0;
         height: 1px;
         transition: all 0.3s ease-in-out;
         display: block;
@@ -1404,7 +1428,6 @@ section {
         left: 0;
         bottom: -1px;
         z-index: 2;
-        opacity: 0;
 
       }
     }
@@ -1418,9 +1441,10 @@ section {
         }
 
         &::before {
-          opacity: 1;
+          width: 75%;
         }
       }
+
     }
   }
 }
@@ -1487,6 +1511,7 @@ section {
     align-items: baseline;
     flex-direction: column;
     justify-content: center;
+
     @media screen and (max-width: 768px) {
       padding-top: 50px;
       justify-content: center;
@@ -1877,7 +1902,7 @@ section {
 
     input {
       padding: 12px 13px;
-      background: #EBFCFF;
+      background: var(--c-white);
       border: 1px solid #2A266966;
       width: 100%;
       border-radius: 4px;
